@@ -26,7 +26,3 @@ const setIcon = (weather) => {
 
   return icon;
 }
-
-
-module.exports = { setIcon }
-

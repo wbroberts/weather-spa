@@ -3,22 +3,25 @@ const app = express();
 const dotenv = require('dotenv').config();
 const morgan = require('morgan');
 
+// My functions
 const {getCoords} = require('./functions/getCoords');
 const {getWeather} = require('./functions/getWeather');
 
 app.use(express.static(__dirname + './../../public'));
 app.use(express.json());
-app.use(express.urlencoded({extended: false}));
 app.use(morgan('dev'));
 
+// The homepage--only page
 app.get('/', (req, res) => {
   res.render('index', 'html');
 });
 
+// Gets the coordinates the user searches for
+// and then gets the current weather and forecast
+// for location. Then it sends info back.
 app.post('/weather', (req, res) => {
-  const address = req.body.address;
 
-  getCoords(address)
+  getCoords(req.body.address)
     .then(coords => {
       return getWeather(coords.lat, coords.long);
     })
@@ -30,8 +33,9 @@ app.post('/weather', (req, res) => {
     .catch(error => {
       res.status(400).json({
         error
-      })
-    })
+      });
+    });
+
 });
 
 module.exports = app;
