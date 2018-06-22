@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Weather</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="./css/main.css" rel="stylesheet" type="text/css" media="screen">
+
+</head>
+
+<body>
+  <header>
+    <h1>Weather</h1>
+
+    <form id="weather-location">
+      <input type="text" placeholder="Location..." >
+      <button>Get Weather</button>
+    </form>
+  </header>
+
+  <section>
+
+    <div class="weather-icon"></div>
+    <div class="weather"></div>
+    <div class="forecast">
+    </div>
+
+  </section>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
+  <script src="./scripts/functions.js"></script>
+  <script src="./scripts/main.js"></script>
+</body>
+
+</html>

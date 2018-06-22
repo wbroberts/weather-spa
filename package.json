@@ -1,0 +1,22 @@
+{
+  "name": "weather",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "browserify public/scripts/main.js -o public/scripts/bundle.js",
+    "server": "nodemon server/server.js"
+  },
+  "author": "William Roberts",
+  "license": "ISC",
+  "dependencies": {
+    "ansi-colors": "^2.0.1",
+    "axios": "^0.18.0",
+    "dotenv": "^6.0.0",
+    "express": "^4.16.3",
+    "morgan": "^1.9.0",
+    "socket.io": "^2.1.1"
+  },
+  "devDependencies": {}
+}
