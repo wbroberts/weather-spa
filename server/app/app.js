@@ -1,11 +1,12 @@
 const express = require('express');
-const app = express();
 const dotenv = require('dotenv').config();
 const morgan = require('morgan');
 
-// My functions
+// My files
 const {getCoords} = require('./functions/getCoords');
 const {getWeather} = require('./functions/getWeather');
+
+const app = express();
 
 app.use(express.static(__dirname + './../../public'));
 app.use(express.json());
