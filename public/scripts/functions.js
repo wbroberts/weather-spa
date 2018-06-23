@@ -1,5 +1,5 @@
 const renderForecast = data => {
-  console.log(data);
+
   for (let obj of data.simpleforecast.forecastday) {
     const forecast = {
       day: obj.date.weekday,
@@ -18,9 +18,9 @@ const renderForecastDay = obj => {
   const temp = document.createElement('p');
   day.textContent = obj.day;
   temp.textContent = obj.highTemp;
-  forecastSection.insertAdjacentElement('afterbegin', setIcon(obj.icon))
-  forecastSection.insertAdjacentElement('afterbegin', day);
-  forecastSection.insertAdjacentElement('afterbegin', temp);
+  forecastSection.insertAdjacentElement('beforeend', setIcon(obj.icon))
+  forecastSection.insertAdjacentElement('beforeend', day);
+  forecastSection.insertAdjacentElement('beforeend', temp);
 }
 
 const renderCurrentWeather = data => {

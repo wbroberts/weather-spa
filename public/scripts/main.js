@@ -15,7 +15,7 @@ form.addEventListener('submit', e => {
     renderCurrentWeather(response.data);
     renderForecast(response.data.weather.forecast);
   }).catch(error => {
-    console.log(error)
+    weatherSection.textContent = error;
   });
 
   e.target[0].value = '';
