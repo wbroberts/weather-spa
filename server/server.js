@@ -1,5 +1,4 @@
 const http = require('http');
-const socket = require('socket.io');
 const c = require('ansi-colors');
 
 // My file

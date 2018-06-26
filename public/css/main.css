@@ -9,7 +9,12 @@
     font-size: 2rem; }
 
 .weather i {
-  font-size: 5rem; }
+  font-size: 7rem;
+  margin: 25px; }
+
+.city {
+  font-size: 4rem;
+  font-weight: 300; }
 
 #weather-location input {
   background: transparent;

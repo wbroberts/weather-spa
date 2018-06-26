@@ -7,9 +7,9 @@ let address;
 form.addEventListener('submit', e => {
   e.preventDefault();
 
-  address = encodeURIComponent(e.target[0].value);
+  address = encodeURIComponent(e.target[0].value.trim());
 
-  axios.post('./weather', {
+  axios.post('./api/weather', {
     address
   }).then(response => {
     renderCurrentWeather(response.data);
