@@ -1,5 +1,12 @@
 const renderForecast = data => {
-  forecastSection.textContent = '';
+  forecastTitle.textContent = '';
+  fourday.textContent = '';
+
+  const forecast = document.createElement('h3');
+  forecast.textContent = '4 Day Forecast';
+  forecast.className = 'currently';
+
+  forecastTitle.insertAdjacentElement('afterbegin', forecast);
 
   for (let obj of data.simpleforecast.forecastday) {
     const forecast = {
@@ -25,7 +32,7 @@ const renderForecastDay = obj => {
   });
   const parsedForecast = new DOMParser().parseFromString(forecast, 'text/html').querySelector('div');
 
-  forecastSection.appendChild(parsedForecast);
+  fourday.appendChild(parsedForecast);
 }
 
 const renderCurrentWeather = obj => {

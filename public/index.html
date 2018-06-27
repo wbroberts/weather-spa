@@ -20,12 +20,15 @@
   </header>
 
   <section id="weather-info"></section>
-  <section id="forecast-info"></section>
+  <section id="forecast-info">
+    <div id="forecast-title"></div>
+    <div id="four-day"></div>
+  </section>
 
   <script id="current-weather-template" type="text/template">
     <div class="current-weather">
       <h2 class="city">{{location}}</h2>
-
+      <h3>Current Conditions</h3>
       <div class="current-container">
 
         <div class="current-icon">
@@ -33,8 +36,7 @@
         </div>
 
         <div class="current-info">
-          <h3 class="currently">Currently</h3>
-          <p>{{currentTemp}} &deg F</p>
+          <p class="temp">{{currentTemp}} &deg F</p>
           <p>Wind: {{currentWind}}</p>
           <p>{{currentConditions}}</p>
         </div>

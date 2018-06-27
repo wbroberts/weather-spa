@@ -1,6 +1,8 @@
 const form = document.getElementById('weather-location');
 const weatherSection = document.getElementById('weather-info');
-const forecastSection = document.getElementById('forecast-info')
+const forecastSection = document.getElementById('forecast-info');
+const forecastTitle = document.getElementById('forecast-title');
+const fourday = document.getElementById('four-day');
 
 let address;
 
