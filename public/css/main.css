@@ -7,6 +7,7 @@ body {
   background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("./img/clouds.jpg");
   background-position: center;
   background-size: cover;
+  background-attachment: fixed;
   color: #ffffff;
   display: flex;
   flex-direction: column;
@@ -33,18 +34,24 @@ section {
     opacity: 1; } }
 #forecast-info {
   display: flex;
-  flex-direction: row; }
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%; }
 
 .forecast-container {
+  align-items: center;
   display: flex; }
 
 .forecast {
   animation: fadeIn 1.5s forwards;
+  display: flex;
+  flex-direction: column;
   opacity: 0;
-  padding: 25px; }
+  padding: 25px;
+  width: 250px; }
   .forecast h4 {
     font-size: 1.8rem;
-    font-weight: 600;
+    font-weight: 400;
     padding-bottom: 10px; }
   .forecast i {
     font-size: 3rem;
@@ -72,7 +79,7 @@ section {
     line-height: 150%; }
 
 .city {
-  font-size: 4rem;
+  font-size: 5rem;
   font-weight: 300; }
 
 .current-container {
@@ -105,5 +112,9 @@ section {
   #weather-location input::placeholder {
     color: #ffffff85;
     letter-spacing: 1px; }
+
+@media all and (max-width: 900px) {
+  #weather-location {
+    width: 100%; } }
 
 /*# sourceMappingURL=main.css.map */
