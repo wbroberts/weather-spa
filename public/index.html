@@ -6,6 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Weather</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,600" rel="stylesheet">
   <link href="./css/weather-icons.min.css" rel="stylesheet" type="text/css" media="screen">
   <link href="./css/main.css" rel="stylesheet" type="text/css" media="screen">
 
@@ -13,23 +14,55 @@
 
 <body>
   <header>
-    <h1>Weather</h1>
-
     <form id="weather-location">
-      <input type="text" placeholder="Location..." >
-      <button>Get Weather</button>
+      <input type="text" placeholder="Search for weather..." autofocus autocomplete="false">
     </form>
   </header>
 
-  <section id="weather-info">
-
-    <div class="weather-icon"></div>
-    <div class="weather"></div>
-    <div class="forecast"></div>
-
+  <section id="weather-info"></section>
+  <section id="forecast-info">
   </section>
 
+  <script id="current-weather-template" type="text/template">
+    <div class="current-weather">
+      <h2 class="city">{{location}}</h2>
+
+      <div class="current-container">
+
+        <div class="current-icon">
+          <i class="{{icon}}"></i>
+        </div>
+
+        <div class="current-info">
+          <h3 class="currently">Currently</h3>
+          <p>{{currentTemp}} &deg F</p>
+          <p>Wind: {{currentWind}}</p>
+          <p>{{currentConditions}}</p>
+        </div>
+
+      </div>
+    </div>
+  </script>
+
+  <script id="forecast-template" type="text/template">
+    <div class="forecast">
+      <h4>{{date}}</h4>
+      <div class="forecast-container">
+        <div class="forecast-icon">
+          <i class="{{icon}}"></i>
+        </div>
+
+        <div class="forecast-info">
+          <p>High: {{highTemp}}</p>
+          <p>Low: {{lowTemp}}</p>
+          <p>{{conditions}}</p>
+        </div>
+      </div>
+    </div>
+  </script>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.3.0/mustache.min.js"></script>
   <script src="./scripts/icon.js"></script>
   <script src="./scripts/functions.js"></script>
   <script src="./scripts/main.js"></script>

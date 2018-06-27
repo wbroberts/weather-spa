@@ -15,31 +15,31 @@ const renderForecast = data => {
 }
 
 const renderForecastDay = obj => {
-  const day = document.createElement('h3');
-  const temp = document.createElement('p');
+  const template = document.getElementById('forecast-template').innerHTML;
+  const forecast = Mustache.render(template, {
+    icon: setIcon(obj.icon),
+    date: obj.day,
+    highTemp: obj.highTemp,
+    lowTemp: obj.lowTemp,
+    condtions: obj.condtions
+  });
+  const parsedForecast = new DOMParser().parseFromString(forecast, 'text/html').querySelector('div');
 
-  day.textContent = obj.day;
-  temp.textContent = obj.highTemp;
-
-  forecastSection.insertAdjacentElement('beforeend', setIcon(obj.icon))
-  forecastSection.insertAdjacentElement('beforeend', day);
-  forecastSection.insertAdjacentElement('beforeend', temp);
+  forecastSection.appendChild(parsedForecast);
 }
 
-const renderCurrentWeather = data => {
+const renderCurrentWeather = obj => {
   weatherSection.textContent = '';
 
-  const temp = data.weather.current.temp_f
-  const location = data.weather.current.display_location.full
+  const template = document.getElementById('current-weather-template').innerHTML;
+  const weather = Mustache.render(template, {
+    location: obj.display_location.full,
+    icon: setIcon(obj.icon),
+    currentTemp: obj.temp_f,
+    currentWind: obj.wind_string,
+    currentConditions: obj.weather 
+  });
+  const parsedWeather = new DOMParser().parseFromString(weather, 'text/html').querySelector('div');
 
-  const h3 = document.createElement('h3');
-  h3.textContent = temp;
-
-  const h2 = document.createElement('h2');
-  h2.textContent = location;
-  h2.className = 'city';
-
-  weatherSection.insertAdjacentElement('afterbegin', setIcon(data.weather.current.icon));
-  weatherSection.insertAdjacentElement('afterbegin', h3);
-  weatherSection.insertAdjacentElement('afterbegin', h2);
+  weatherSection.appendChild(parsedWeather);
 }
