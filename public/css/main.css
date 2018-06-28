@@ -14,7 +14,7 @@ body {
   font-family: 'Montserrat', Arial, Helvetica, sans-serif;
   font-size: 16px;
   min-height: 100vh;
-  padding: 15px;
+  padding: 0 15px;
   width: 100%; }
 
 header {
@@ -38,7 +38,8 @@ h1, h3, h4 {
 h3 {
   font-size: 2rem;
   font-weight: 400;
-  letter-spacing: 1px; }
+  letter-spacing: 1px;
+  padding-bottom: 10px; }
 
 h4 {
   font-size: 1.2rem;
@@ -130,7 +131,8 @@ h4 {
   padding: 20px; }
 
 .temp {
-  font-size: 2rem; }
+  font-size: 2rem;
+  letter-spacing: 1.5px; }
 
 #weather-location {
   width: 50%; }
@@ -148,10 +150,10 @@ h4 {
     color: #ffffff85;
     letter-spacing: 1px; }
 
-@media all and (max-width: 900px) {
+@media all and (max-width: 800px) {
   #weather-location {
     width: 100%; } }
-@media all and (max-width: 600px) {
+@media all and (max-width: 700px) {
   .city {
     font-size: 2.5rem; }
 
@@ -163,6 +165,9 @@ h4 {
 @media all and (max-width: 500px) {
   .current-container {
     flex-wrap: wrap; }
+
+  .current-weather {
+    text-align: center; }
 
   .current-icon {
     padding-bottom: 0; } }
