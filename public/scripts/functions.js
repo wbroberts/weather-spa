@@ -50,3 +50,15 @@ const renderCurrentWeather = obj => {
 
   weatherSection.appendChild(parsedWeather);
 }
+
+const loading = (location) => {
+  weatherSection.textContent = '';
+
+  const template = document.getElementById('searching-template').innerHTML;
+  const searching = Mustache.render(template, {
+    location: location
+  });
+  const parsed = new DOMParser().parseFromString(searching, 'text/html').querySelector('div');
+
+  weatherSection.appendChild(parsed);
+}

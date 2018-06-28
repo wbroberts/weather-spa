@@ -40,6 +40,29 @@ h3 {
   font-weight: 400;
   letter-spacing: 1px; }
 
+h4 {
+  font-size: 1.2rem;
+  letter-spacing: 1px; }
+
+.search-container {
+  display: flex;
+  font-size: 1.4rem; }
+  .search-container p {
+    margin-left: 20px; }
+
+.searching {
+  animation: rotate 1s linear infinite;
+  border-radius: 100%;
+  border-left: 2px solid #ffffff;
+  border-top: 2px solid transparent;
+  border-bottom: 2px solid transparent;
+  border-right: 2px solid #ffffff;
+  width: 25px;
+  height: 25px; }
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg); } }
 @keyframes fadeIn {
   100% {
     opacity: 1; } }
@@ -56,7 +79,8 @@ h3 {
 
 .forecast-container {
   align-items: center;
-  display: flex; }
+  display: flex;
+  justify-content: space-around; }
 
 .forecast {
   animation: fadeIn 1.5s forwards;
@@ -92,7 +116,8 @@ h3 {
 
 .city {
   font-size: 5rem;
-  font-weight: 300; }
+  font-weight: 300;
+  padding-bottom: 20px; }
 
 .current-container {
   align-items: center;
@@ -128,7 +153,7 @@ h3 {
     width: 100%; } }
 @media all and (max-width: 600px) {
   .city {
-    font-size: 3rem; }
+    font-size: 2.5rem; }
 
   h3 {
     font-size: 1.6rem; }
@@ -137,6 +162,9 @@ h3 {
     font-size: 1.2rem; } }
 @media all and (max-width: 500px) {
   .current-container {
-    flex-wrap: wrap; } }
+    flex-wrap: wrap; }
+
+  .current-icon {
+    padding-bottom: 0; } }
 
 /*# sourceMappingURL=main.css.map */

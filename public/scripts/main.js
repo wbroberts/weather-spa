@@ -11,6 +11,8 @@ form.addEventListener('submit', e => {
 
   address = encodeURIComponent(e.target[0].value.trim());
 
+  loading(e.target[0].value);
+  
   axios.post('./api/weather', {
     address
   }).then(response => {
